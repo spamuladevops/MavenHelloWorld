@@ -21,17 +21,17 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
     
-- script: |
-    echo "Listing files:"
-    find . -type f
-  displayName: 'List files for debugging'
+#- script: |
+#    echo "Listing files:"
+#    find . -type f
+#  displayName: 'List files for debugging'
 
-- task: CopyFiles@2
-  inputs:
-    Contents: '**/.war'
-    TargetFolder: '$(build.artifactstagingdirectory)'
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'war'
-    publishLocation: 'Container'
+#- task: CopyFiles@2
+#  inputs:
+#    Contents: '**/.war'
+#    TargetFolder: '$(build.artifactstagingdirectory)'
+#- task: PublishBuildArtifacts@1
+#  inputs:
+#    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+#    ArtifactName: 'war'
+#    publishLocation: 'Container'
